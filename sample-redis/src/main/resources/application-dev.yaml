@@ -1,0 +1,55 @@
+server:
+  port: 10096
+  servlet:
+    context-path: /${artifactId}
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 1
+    timeout: 10000
+    password:
+    jedis:
+      pool:
+        max-active: 300
+        max-idle: 100
+        min-idle: 1
+        max-wait: 1000
+
+# Dubbo配置
+dubbo:
+  application:
+    name: ${artifactId}
+    logger: slf4j
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20883
+    serialization: kryo
+  scan:
+    base-packages: com.cn.boot.sample.redis.service
+  consumer:
+    check: false
+
+swagger:
+  enabled: true
+  print-init: true
+  docket:
+    base-package: com.cn.boot.sample.redis.controller
+    group-name: ${artifactId}
+    path-selectors:
+      exclude-patterns: [/error]
+    api-info:
+      contact:
+        name: ChenNan
+        email: 327919006@qq.com
+        url: https://gitee.com/NuLiing
+      title: ${artifactId}
+      description: ${artifactId}-接口文档
+      license: Apache License, Version 2.0
+      license-url: https://www.apache.org/licenses/LICENSE-2.0.html
+      version: ${project.version}
+      terms-of-service-url: https://gitee.com/NuLiing
+    response-message-language: cn

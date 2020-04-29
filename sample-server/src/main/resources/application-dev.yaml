@@ -1,0 +1,28 @@
+# 开发环境配置
+
+spring:
+  # 数据库连接配置
+  datasource:
+    url: jdbc:mysql://localhost:3306?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: chennan
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      connection-test-query: SELECT 1
+
+# Dubbo配置
+dubbo:
+  application:
+    name: ${artifactId}
+    logger: slf4j
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20881
+    serialization: kryo
+  scan:
+    base-packages: com.cn.boot.sample.server.service
+#  provider:
+    # 使用令牌防止消费者绕过注册中心访问提供者，true 随机令牌， 其他自定义令牌 如123456
+#    token: true
