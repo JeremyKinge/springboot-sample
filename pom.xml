@@ -77,7 +77,7 @@
         <dubbo-spring-boot-starter.version>2.7.3</dubbo-spring-boot-starter.version>
 
         <!--guava-->
-        <guava.version>27.1-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
 
         <!--rabbitmq-->
         <rabbitmq.version>5.7.2</rabbitmq.version>
