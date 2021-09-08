@@ -72,7 +72,7 @@
         <commons-io.version>2.6</commons-io.version>
 
         <!--dubbo-->
-        <dubbo.version>2.7.3</dubbo.version>
+        <dubbo.version>2.7.13</dubbo.version>
         <dubbo-serialization-kryo.version>2.7.3</dubbo-serialization-kryo.version>
         <dubbo-spring-boot-starter.version>2.7.3</dubbo-spring-boot-starter.version>
 
